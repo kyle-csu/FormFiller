@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.b0 {
+  @apply bg-zinc-100 dark:bg-zinc-900;
+}
+
+.bg {
+  @apply bg-zinc-200 dark:bg-zinc-800;
+}
+
+.b1 {
+  @apply bg-zinc-300 dark:bg-zinc-700;
+}
+
+.b2 {
+  @apply bg-zinc-350 dark:bg-zinc-600;
+}
+
+.b3 {
+  @apply bg-zinc-400 dark:bg-zinc-500;
+}
+
+.border-bg {
+  @apply border-zinc-100 dark:border-zinc-900;
+}
+
+.border-hl {
+  @apply border-blue-600 dark:border-blue-400;
+}
+
+body {
+  margin: 0;
+  container-type: inline-size;
+}
+
+#wrapper {
+  @apply bg;
+  @apply text-black dark:text-white;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  scrollbar-color: theme('colors.zinc.400') theme('colors.zinc.100');
+}
+#wrapper:is(.dark *) {
+  scrollbar-color: theme('colors.zinc.600') theme('colors.zinc.900');
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hover .hover-hide {
+  visibility: hidden;
+}
+.hover:hover .hover-hide {
+  visibility: unset;
+}
+
+.no-shrink > * {
+  flex-shrink: 0;
+}
+
+/* override color picker left align */
+.color-dropdown.picker {
+  transition: none;
+}
+@media (max-height: 599px) {
+  .color-dropdown.picker {
+    top: 50% !important;
+    transform: translate(calc(-100% - 5px), -50%) !important;
+  }
+}
+@media (min-height: 600px) {
+  .color-dropdown.picker {
+    left: unset !important;
+    right: 0;
+  }
+}
+
+/* remove number input buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

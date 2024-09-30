@@ -1,0 +1,53 @@
+{
+  "name": "form-filler",
+  "version": "1.0.0",
+  "author": "Kyle",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.tauri.js",
+    "build": "vite build --config vite.config.tauri.js",
+    "preview": "vite preview",
+    "prettier": "prettier src -c",
+    "prettier:fix": "prettier src -w",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "tauri": "tauri"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "9.11.0",
+    "@ianvs/prettier-plugin-sort-imports": "4.3.1",
+    "@types/node": "20.16.5",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.11.0",
+    "eslint-config-prettier": "9.1.0",
+    "lightningcss": "1.27.0",
+    "postcss": "8.4.47",
+    "prettier": "3.3.3",
+    "prettier-eslint-cli": "8.0.1",
+    "prettier-plugin-tailwindcss": "0.6.6",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "tailwindcss": "3.4.12",
+    "typescript": "5.6.2",
+    "typescript-eslint": "7.18.0",
+    "vite": "5.4.7",
+    "vite-plugin-solid": "2.10.2",
+    "vite-plugin-tauri": "3.3.0"
+  },
+  "dependencies": {
+    "@solid-primitives/refs": "^1.0.8",
+    "@solid-primitives/resize-observer": "^2.0.26",
+    "@solidjs/router": "^0.14.5",
+    "@suid/icons-material": "^0.8.1",
+    "@suid/material": "^0.18.0",
+    "@tauri-apps/api": "1.6.0",
+    "@tauri-apps/cli": "1.6.2",
+    "@thednp/solid-color-picker": "^0.0.10",
+    "css-line-break": "^2.1.0",
+    "node-html-parser": "^6.1.13",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.6.82",
+    "solid-js": "1.8.22",
+    "zod": "^3.23.8"
+  }
+}

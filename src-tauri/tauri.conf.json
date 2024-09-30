@@ -1,0 +1,92 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "devPath": "Injected by vite-plugin-tauri",
+    "distDir": "Injected by vite-plugin-tauri"
+  },
+  "package": {
+    "productName": "FormFiller",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "copyFile": true,
+        "exists": true,
+        "scope": [
+          "**"
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "dialog": {
+        "all": false,
+        "ask": false,
+        "confirm": false,
+        "message": false,
+        "open": true,
+        "save": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": [
+          "https://www.ccappraiser.com/*",
+          "https://agis.charlottecountyfl.gov/*"
+        ]
+      },
+      "shell": {
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.form-filler.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": ["stored/*"],
+      "externalBin": [],
+      "copyright": "",
+      "category": "DeveloperTool",
+      "shortDescription": "",
+      "longDescription": "",
+      "deb": {
+        "depends": []
+      },
+      "macOS": {
+        "frameworks": [],
+        "minimumSystemVersion": "",
+        "exceptionDomain": "",
+        "signingIdentity": null,
+        "entitlements": null
+      },
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "title": "Form Filler",
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
+    }
+  }
+}

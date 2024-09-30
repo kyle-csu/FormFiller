@@ -1,0 +1,31 @@
+[package]
+name = "form-filler"
+version = "1.0.0"
+description = "Fills forms for the CSU DevNet project 1"
+authors = ["Kyle"]
+license = "MIT"
+repository = "https://github.com/AR10Dev/tauri-solid-ts-tailwind-vite"
+default-run = "form-filler"
+edition = "2021"
+build = "src/build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5.1", features = [] }
+
+[dependencies]
+serde_json = "1.0.116"
+serde = { version = "1.0.200", features = ["derive"] }
+tauri = { version = "1.6.2", features = [ "fs-exists", "shell-open", "http-all", "fs-copy-file", "dialog-open", "dialog-save", "fs-read-file", "fs-write-file", "path-all"] }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
+
+[profile.release]
+strip = true            # Automatically strip symbols from the binary
+panic = "abort"         # Strip expensive panic clean-up logic
+codegen-units = 1       # Compile crates one after another so the compiler can optimize better
+lto = true              # Enables link to optimizations
+opt-level = "s"         # Optimize for binary size
